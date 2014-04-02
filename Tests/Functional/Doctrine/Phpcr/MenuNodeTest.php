@@ -14,7 +14,7 @@ namespace Symfony\Cmf\Bundle\MenuBundle\Tests\Functional\Doctrine\Phpcr;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
-use Symfony\Cmf\Component\Testing\Document\Content;
+use Symfony\Cmf\Bundle\MenuBundle\Resources\DataFixtures\Content;
 
 class MenuNodeTest extends BaseTestCase
 {
@@ -28,7 +28,6 @@ class MenuNodeTest extends BaseTestCase
         $this->content->setParent($this->baseNode);
         $this->content->setTitle('fake_weak_content');
         $this->content->setName('fake_weak_content');
-        $this->dm->persist($this->content);
 
         $this->child1 = new MenuNode;
         $this->child1->setName('child1');
@@ -92,7 +91,9 @@ class MenuNodeTest extends BaseTestCase
 
         $menuNode->addChild($this->child1);
 
+        $this->dm->persist($this->content);
         $this->dm->persist($menuNode);
+
         $this->dm->flush();
         $this->dm->clear();
 
