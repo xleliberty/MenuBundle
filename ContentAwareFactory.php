@@ -23,7 +23,7 @@ use Symfony\Cmf\Bundle\MenuBundle\Model\Menu;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
-use Symfony\Cmf\Bundle\MenuBundle\Voter\VoterInterface;
+use Knp\Menu\Matcher\Voter\VoterInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Event\CreateMenuItemFromNodeEvent;
 
