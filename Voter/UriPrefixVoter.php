@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Route;
 
 use Knp\Menu\ItemInterface;
+use Knp\Menu\Matcher\Voter\VoterInterface as KnpVoterInterface;
 
 /**
  * This voter checks if the content entry in the menu item extras is a Symfony
@@ -28,7 +29,7 @@ use Knp\Menu\ItemInterface;
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
  * @author David Buchmann <mail@davidbu.ch>
  */
-class UriPrefixVoter implements VoterInterface
+class UriPrefixVoter implements KnpVoterInterface
 {
     /**
      * @var Request|null

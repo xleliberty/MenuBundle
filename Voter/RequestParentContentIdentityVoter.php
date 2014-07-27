@@ -13,6 +13,7 @@ namespace Symfony\Cmf\Bundle\MenuBundle\Voter;
 
 use Knp\Menu\ItemInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Knp\Menu\Matcher\Voter\VoterInterface as KnpVoterInterface;
 
 /**
  * A variant of the RequestContentIdentityVoter that checks if the request
@@ -24,7 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @author David Buchmann <mail@davidbu.ch>
  */
-class RequestParentContentIdentityVoter implements VoterInterface
+class RequestParentContentIdentityVoter implements KnpVoterInterface
 {
     /**
      * @var string The key to look up the content in the request attributes
