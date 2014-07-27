@@ -83,6 +83,8 @@ class ContentAwareFactory extends MenuFactory
         LoggerInterface $logger
     )
     {
+        parent::__construct();
+
         $this->generator = $generator;
         $this->contentRouter = $contentRouter;
         $this->linkTypes = array('route', 'uri', 'content');
